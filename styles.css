@@ -1,9 +1,11 @@
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+body {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  gap: 20px;
 }
 
 #container-grid {
@@ -20,4 +22,8 @@ body{
   flex: 1 1 calc(100% / 16);
   aspect-ratio: 1;
   box-sizing: border-box;
+}
+
+.btn {
+  cursor: pointer;
 }
