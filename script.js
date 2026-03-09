@@ -8,17 +8,25 @@ document.body.appendChild(btn);
 btn.textContent = "New Grid";
 btn.addEventListener("click", () => {
   valor = parseInt(prompt("Grid Dimension"));
-  container.innerHTML('')
-  blocks(valor)
+  container.innerHTML = "";
+  if (valor <= 100) {
+    blocks(valor);
+  } else {
+    alert('Max is 100')
+
+  }
 });
 
 function blocks(int) {
-  for (let i = 0; i < int; i++) {
+  for (let i = 0; i < int * int; i++) {
     const divs = document.createElement("div");
     divs.classList.add("grid");
+    divs.style.flexBasis = 100 / int + "%";
     container.appendChild(divs);
     divs.addEventListener("mouseover", () => {
       divs.style.backgroundColor = "blue";
     });
   }
 }
+
+blocks(16);
